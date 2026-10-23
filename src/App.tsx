@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Button } from './components/Button';
 import { PhoneCard } from './components/PhoneCard';
 import { Stage } from './components/Stage';
 import { loadImage, sample } from './lib/image';
@@ -53,13 +52,16 @@ export function App() {
 
   return (
     <div className="app">
-      <aside className="sidebar">
-        <div className="section section--header">
-          <div className="eyebrow eyebrow--brand">COVERS • MOCKUP BUILDER</div>
-          <div className="title">Phone screens</div>
-          <div className="lede">Drop a screenshot on a phone or its card. It's fitted to the screen edge-to-edge and masked to the real display shape.</div>
+      <header className="header">
+        <div className="header__logo" />
+        <div className="header__text">
+          <div className="header__title">Phone Mockup Builder</div>
+          <div className="eyebrow">SCREENSHOTS IN · TRANSPARENT WEBP OUT</div>
         </div>
-        <div className="section section--format">
+      </header>
+      <div className="body">
+      <aside className="sidebar">
+        <div className="section">
           <span className="eyebrow">FORMAT</span>
           <select className="select" value={s.mode} onChange={(e) => set({ mode: e.target.value as Mode })}>
             <option value="portrait">Portrait • up to 3 phones</option>
@@ -98,11 +100,12 @@ export function App() {
             <input type="checkbox" checked={s.retina} onChange={(e) => set({ retina: e.target.checked })} />
             <span className="check__text"><span>Export @1.5x (high-res)</span><span className="hint">1.5× resolution — display at 992px wide for sharp text</span></span>
           </label>
-          <Button onClick={onExport} disabled={!assets} style={{ width: '100%' }}>Export WebP</Button>
+          <button type="button" className="export-btn" onClick={onExport} disabled={!assets}>Export WebP</button>
           <span className="footer__info">{out.w} × {out.h} • 16:9 • WebP {Math.round(WEBP_QUALITY * 100)}% • transparent</span>
         </div>
       </aside>
       <Stage state={s} assets={assets} onFile={loadFile} />
+      </div>
     </div>
   );
 }

@@ -18,9 +18,9 @@ export function PhoneCard({ phone: p, land, canHide, onChange, onFile }: Props) 
   const onDrop = (e: DragEvent) => { e.preventDefault(); setOver(false); onFile(e.dataTransfer.files[0]); };
 
   return (
-    <div className="section">
+    <div className="card">
       <label className="card-head">
-        <span className="card-head__label">{land ? 'Phone' : p.label}</span>
+        <span className="eyebrow">{land ? 'Phone' : p.label}</span>
         {!land && (
           <span className="card-head__show">
             Show
