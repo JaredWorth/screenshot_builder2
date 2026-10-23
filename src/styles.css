@@ -21,8 +21,8 @@ input[type=checkbox] { accent-color: var(--accent); width: 16px; height: 16px; m
 .app { display: flex; flex-direction: column; height: 100vh; font-family: var(--font-body); color: var(--ink); background: var(--bg); }
 
 .header { display: flex; align-items: center; gap: 14px; padding: 14px 20px; border-bottom: 1px solid var(--border); flex: none; }
-.header__logo { width: 40px; height: 40px; border-radius: 8px; background: var(--ink); display: flex; align-items: center; justify-content: center; }
-.header__logo::before { content: ""; width: 12px; height: 22px; border: 2px solid #fff; border-radius: 4px; box-sizing: border-box; }
+.header__logo { width: 40px; height: 40px; flex: none; border-radius: 8px; background: var(--ink); display: flex; align-items: center; justify-content: center; }
+.header__mark { width: 26px; height: auto; color: #fff; }
 .header__text { display: flex; flex-direction: column; gap: 4px; }
 .header__title { font-weight: 600; font-size: 20px; line-height: 1; }
 

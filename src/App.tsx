@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Logo } from './components/Logo';
 import { PhoneCard } from './components/PhoneCard';
 import { Stage } from './components/Stage';
 import { loadImage, sample } from './lib/image';
@@ -53,7 +54,7 @@ export function App() {
   return (
     <div className="app">
       <header className="header">
-        <div className="header__logo" />
+        <div className="header__logo"><Logo className="header__mark" /></div>
         <div className="header__text">
           <div className="header__title">Phone Mockup Builder</div>
           <div className="eyebrow">SCREENSHOTS IN · TRANSPARENT WEBP OUT</div>
